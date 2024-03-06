@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    height: 960px;
+    flex-wrap: wrap;
+}
+svg {
+    width: 20%;
+    height: 100%;
+}
+span {
+    font-size: x-large;
+    font-weight: 800;
+}
+.bg_logo {
+    flex: 2 0 200px;
+    overflow: hidden;
+    background-image: url('bg-phot.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_container {
+    flex: 3 0 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: large;
+    font-family: monospace, 'Times New Roman', Times, serif;
+}
+
+.log {
+    background-color: rgb(252, 252, 252);
+    display: flex;
+    opacity: 50%;
+    justify-content: center ;
+    align-items: center;
+    gap: 30px;
+    width: 100%
+}
+
+.form_container > * {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(235, 239, 253);
+}
+.form_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_info>p {
+    padding: 30px;
+    line-height: 1.6em;
+}
+.submit > * {
+    padding: 20px;
+}
+.form_cont {
+    background-color: white;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+form > * {
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+input {
+    border: 2px solid rgb(139, 130, 130);
+    border-radius: 5px;
+}
+
