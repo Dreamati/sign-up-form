@@ -2,6 +2,7 @@ body {
     display: flex;
     height: 960px;
     flex-wrap: wrap;
+    --theme: rgb(250, 239, 255);
 }
 svg {
     width: 20%;
@@ -41,7 +42,7 @@ span {
 .form_container > * {
     flex: 1;
     width: 100%;
-    background-color: rgb(235, 239, 253);
+    background-color: var(--theme);
 }
 .form_info {
     display: flex;
@@ -54,6 +55,8 @@ span {
 }
 .submit > * {
     padding: 20px;
+    margin-left: 15%;
+
 }
 .form_cont {
     background-color: white;
@@ -68,10 +71,32 @@ form > * {
     
     display: flex;
     justify-content: space-around;
+    height: 30%;
 }
 
 input {
     border: 2px solid rgb(139, 130, 130);
     border-radius: 5px;
+    height: 40%;
+    margin-top: 10px;
 }
 
+button {
+    padding: 10px;
+    border: 3px solid;
+    border-radius: 5px;
+    width: 150px;
+    height: 15%;
+    background-color: white;
+    
+}
+
+button:hover {
+    
+    background-color: var(--theme);
+    border-color: blue;
+    
+}
+:required::before {
+    content: "*";
+}

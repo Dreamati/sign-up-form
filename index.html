@@ -35,24 +35,42 @@
         </p>
             </div>
         <div class="form_cont">
-            <form action="">
+            <form id="form1" action="">
                 <p class="name">
-                    <input type="text">
-                    <input type="text">
+                    <label for="f_name">
+                        First Name: <br>
+                        <input id="f_name" type="text" required>
+                    </label>
+
+                    <label for="l_name">
+                        Last Name: <br>
+                        <input type="text" id="l_name" required>
+                    </label>
                 </p>
 
                 <p class="contact">
-                    <input type="text">
-                    <input type="text">
+                    <label for="phone">
+                        Phone: <br><input id="phone" type="tel">
+                    </label>
+
+                    <label for="email">
+                        Email: <br><input type="email" required>
+                    </label>
                 </p>
                 <p class="password">
-                    <input type="text">
-                    <input type="text">
+                    <label for="pass">
+                        Password <br>
+                        <input id="pass" type="password" required>
+                    </label>
+
+                    <label for="conf_pass">
+                        Confirm Password: <br><input id="conf_pass" type="password" required>
+                    </label>
                 </p>
             </form>
         </div>
         <div class="submit">
-            <div><button>Submit</button></div>
+            <div><button form="form1">Submit</button></div>
             <p>Already have an account? <a href="">Click Here</a></p>
         </div>
     </div>
