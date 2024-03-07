@@ -28,7 +28,23 @@
     </div>
 
     <div class="form_container">
-        <div class="form_info"><p class="form_info_p">
+        <div class="form_info">
+            
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 375 375" xml:space="preserve">
+                <g id="XMLID_510_">
+                    <path id="XMLID_511_" d="M360,172.5h-15v-55c0-3.979-1.58-7.794-4.394-10.607c-2.813-2.813-6.628-4.393-10.606-4.393h-70
+                        c-8.284,0-15,6.716-15,15v55H135v-55c0-8.284-6.717-15-15-15H50c-3.979,0-7.793,1.58-10.606,4.393
+                        C36.58,109.706,35,113.521,35,117.5v55H15c-8.284,0-15,6.715-15,15c0,8.283,6.716,15,15,15h20v55c0,8.283,6.716,15,15,15h70
+                        c3.978,0,7.793-1.58,10.606-4.393c2.813-2.813,4.394-6.629,4.394-10.607v-55h110v55c0,3.978,1.58,7.794,4.394,10.607
+                        c2.813,2.813,6.628,4.393,10.606,4.393h70c8.283,0,15-6.717,15-15v-55h15c8.283,0,15-6.717,15-15
+                        C375,179.215,368.283,172.5,360,172.5z"/>
+                </g>
+            </svg>
+
+            <span>FITTY FLUX Gym Membership</span>
+            
+            <p class="form_info_p">
             This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. <br>Sign up now to get started.
             You know you want to.
             
@@ -36,35 +52,36 @@
             </div>
         <div class="form_cont">
             <form id="form1" action="">
+                <p id="required_field">Required Field Markd with *</p>
                 <p class="name">
                     <label for="f_name">
-                        First Name: <br>
-                        <input id="f_name" type="text" required>
+                        First Name*: <br>
+                        <input id="f_name" type="text" required placeholder="First Name*"> 
                     </label>
 
                     <label for="l_name">
-                        Last Name: <br>
-                        <input type="text" id="l_name" required>
+                        Last Name*: <br>
+                        <input type="text" id="l_name" required placeholder="Last Name*"> 
                     </label>
                 </p>
 
                 <p class="contact">
                     <label for="phone">
-                        Phone: <br><input id="phone" type="tel">
+                        Phone*: <br><input id="phone" type="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" placeholder="123-4567-890">  <span class="num_span"></span>
                     </label>
 
                     <label for="email">
-                        Email: <br><input type="email" required>
+                        Email: <br><input type="email"> 
                     </label>
                 </p>
                 <p class="password">
                     <label for="pass">
-                        Password <br>
-                        <input id="pass" type="password" required>
+                        Password*: <br>
+                        <input id="pass" type="password" required> 
                     </label>
 
-                    <label for="conf_pass">
-                        Confirm Password: <br><input id="conf_pass" type="password" required>
+                    <label for="conf_pass" id="conf_password">
+                        Confirm Password*: <span id="confirmation"></span> <br><input id="conf_pass" type="password" invalid required> 
                     </label>
                 </p>
             </form>
@@ -74,5 +91,28 @@
             <p>Already have an account? <a href="">Click Here</a></p>
         </div>
     </div>
+
+    <script>
+        let confPassword = document.querySelector('#conf_pass');
+        let Password = document.querySelector('#pass');
+
+        let confirmation = document.querySelector('#confirmation');
+
+        confPassword.addEventListener('keyup', function() {
+            
+            confPassword.setAttribute('pattern', Password.value);
+            
+            if (Password.value == confPassword.value) {
+                confirmation.textContent = 'Valid!';
+                confPassword.setAttribute("isvalid", "true");
+            }
+            else {
+                confirmation.textContent = 'InValid!';
+                confPassword.setAttribute("isvalid", "false");
+            }
+        } 
+        )
+
+    </script>
 </body>
 </html>

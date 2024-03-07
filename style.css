@@ -2,7 +2,7 @@ body {
     display: flex;
     height: 960px;
     flex-wrap: wrap;
-    --theme: rgb(250, 239, 255);
+    --theme: #E8F5E9
 }
 svg {
     width: 20%;
@@ -23,10 +23,15 @@ span {
 .form_container {
     flex: 3 0 300px;
     display: flex;
+    
     align-items: center;
     flex-direction: column;
     font-size: large;
     font-family: monospace, 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    border: 2px solid var(--theme);
+    overflow: hidden;
+    margin-left: 10px;
 }
 
 .log {
@@ -48,18 +53,30 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex: 2;
+}
+.form_info  > svg {
+    width: 100px;
 }
 .form_info>p {
     padding: 30px;
     line-height: 1.6em;
+    width: 70%;
 }
 .submit > * {
-    padding: 20px;
-    margin-left: 15%;
+    padding: 0px;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    
 
 }
 .form_cont {
-    background-color: white;
+    background-color: #f1f8e91f;
+    flex: 2;
 }
 form {
     display: flex;
@@ -72,6 +89,8 @@ form > * {
     display: flex;
     justify-content: space-around;
     height: 30%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 input {
@@ -79,6 +98,7 @@ input {
     border-radius: 5px;
     height: 40%;
     margin-top: 10px;
+    width: 200px;
 }
 
 button {
@@ -97,6 +117,58 @@ button:hover {
     border-color: blue;
     
 }
-:required::before {
-    content: "*";
+
+input:invalid {
+    border-color: red;
+}
+
+.submit {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.form_container > svg {
+    width: 15%;
+}
+
+#required_field {
+padding: 0px;
+padding-left: 20px;
+margin: 10px;
+font-size: small;
+height: 10%;
+align-self: flex-start;
+}
+
+
+
+@media only screen and (max-width: 450px) {
+    body {
+      min-height: 1800px;
+    }
+  }
+
+input[type='tel']:invalid ~ span::before{
+    position: absolute;
+    top: 5px;
+    left: 80px;
+    font-size: xx-small;
+    content: 'Format: 123-456-7890';
+    color: rgb(192, 51, 51);
+}
+
+.contact > label {
+    position: relative;
+}
+
+#confirmation {
+    font-size: x-small;
+    position: absolute;
+    top: 45px;
+    left: 227px;
+}
+
+#conf_password {
+    position: relative;
 }
