@@ -70,7 +70,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    flex: 1 0 200px;
     
 
 }
@@ -126,6 +126,7 @@ input:invalid {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .form_container > svg {
